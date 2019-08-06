@@ -1,8 +1,20 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  div
+    Navigation
+    main.container.mx-auto
+      nuxt
+
 </template>
+
+<script>
+import Navigation from '~/components/layout/nav.vue'
+
+export default {
+  components: {
+    Navigation
+  }
+}
+</script>
 
 <style>
 html {
