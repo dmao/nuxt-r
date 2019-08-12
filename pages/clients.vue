@@ -1,13 +1,19 @@
 <template lang="pug">
   section
     h1 Clients
-    ul
-      li(v-for="(project, index) in projectList")
+    ul.mb-2
+      li.rounded.overflow-hidden.shadow-lg(v-for="(project, index) in projectList")
         a(:href="project.url", rel="noreferrer noopener", target="_blank")
-          img(:src="`img/clients/${project.slug}.jpg`")
-          h2 {{ project.name }}
-          h3 {{ project.sector }}
-          p for {{ project.company }}
+          figure
+            img(:src="`img/clients/${project.slug}.jpg`")
+            figcaption.px-4.py-2
+              h2.font-bold.text-xl {{ project.name }}
+              h3.text-gray-600.text-base {{ project.sector }}
+              p.text-sm for {{ project.company }}
+    div(v-for="(projet2) in projects")
+      p {{ projet2.clientName }} 
+      p sector: {{ projet2.projectList.sector }}
+
 </template>
 
 <script>
@@ -15,6 +21,22 @@ export default {
   name: 'Clients',
   data() {
     return {
+      projects: [
+        {
+          clientName: 'Emakina',
+          projectList: {
+            name: 'BNP Baribas',
+            sector: 'bank'
+          }
+        },
+        {
+          clientName: 'TenTwelve',
+          projectList: {
+            name: '1',
+            sector: '2'
+          }
+        }
+      ],
       projectList: [
         {
           name: 'Kaboo',
@@ -88,9 +110,6 @@ export default {
 <style lang="stylus" scoped>
 ul
   display: grid
-  grid-gap: 1rem
+  grid-gap: 2rem
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
-
-li
-  outline: 1px solid pink
 </style>

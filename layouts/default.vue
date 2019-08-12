@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     Navigation
-    main.container.mx-auto
+    main.container.mx-auto.px-4(class="lg:px-16")
       nuxt
 
 </template>
