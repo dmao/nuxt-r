@@ -1,42 +1,23 @@
 <template lang="pug">
-  section
-    h1 Clients
+  section.mb-16.container.mx-auto.px-4(class="lg:px-16")
+    h1.text-center.uppercase.mb-8.text-xl.font-bold Projects
     ul.mb-2
       li.rounded.overflow-hidden.shadow-lg(v-for="(project, index) in projectList")
         a(:href="project.url", rel="noreferrer noopener", target="_blank")
           figure
-            img(:src="`img/clients/${project.slug}.jpg`")
+            img(:src="`img/clients/${project.slug}.jpg`", loading="lazy")
             figcaption.px-4.py-2
               h2.font-bold.text-xl {{ project.name }}
               h3.text-gray-600.text-base {{ project.sector }}
               p.text-sm for {{ project.company }}
-    div(v-for="(projet2) in projects")
-      p {{ projet2.clientName }} 
-      p sector: {{ projet2.projectList.sector }}
 
 </template>
 
 <script>
 export default {
-  name: 'Clients',
+  name: 'ClientsWithImages',
   data() {
     return {
-      projects: [
-        {
-          clientName: 'Emakina',
-          projectList: {
-            name: 'BNP Baribas',
-            sector: 'bank'
-          }
-        },
-        {
-          clientName: 'TenTwelve',
-          projectList: {
-            name: '1',
-            sector: '2'
-          }
-        }
-      ],
       projectList: [
         {
           name: 'Kaboo',
