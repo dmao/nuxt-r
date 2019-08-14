@@ -1,10 +1,10 @@
 <template lang="pug">
-  section.mb-16
+  section.mb-12
     h1.text-center.uppercase.mb-8.text-xl.font-bold 
       span.font-normal More 
       | projects
-    div.flex.justify-center
-      div.mx-4(v-for="(project) in projects")
+    div.justify-center.flex-wrap(class="sm:flex")
+      div.mx-4.mb-4(v-for="(project) in projects")
         h2.uppercase.border-b-2.border-gray-200.mb-4 
           a(:href="project.clientUrl") {{ project.clientName }}
         ul

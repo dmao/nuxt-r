@@ -21,6 +21,11 @@ export default {
     Skills,
     ClientsWithImages,
     ClientsList
+  },
+  head() {
+    return {
+      title: 'Didier Mahaux | Resume'
+    }
   }
 }
 </script>
